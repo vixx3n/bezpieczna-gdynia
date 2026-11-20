@@ -28,6 +28,20 @@ function showAccidentChart(records) {
   }
 }
 
+function showQuarterTable(records) {
+  const tableBody = document.getElementById("quarter-table");
+  tableBody.replaceChildren();
+
+  for (const record of records) {
+    const row = tableBody.insertRow();
+
+    row.insertCell().textContent = record.quarter;
+    row.insertCell().textContent = record.accidents;
+    row.insertCell().textContent = record.injured;
+    row.insertCell().textContent = record.deaths;
+  }
+}
+
 function showStats(records) {
   const year = yearFilter.value;
   const selectedRecords = year === "all"
@@ -47,6 +61,7 @@ function showStats(records) {
   document.getElementById("deaths").textContent = totals.deaths;
 
   showAccidentChart(selectedRecords);
+  showQuarterTable(selectedRecords);
 
   const first = selectedRecords[0].quarter;
   const last = selectedRecords[selectedRecords.length - 1].quarter;

@@ -50,3 +50,52 @@ header {
   margin-bottom: 0;
   color: #b9c3df;
 }
+section + section {
+  margin-top: 32px;
+}
+
+#year-filter {
+  margin-left: 8px;
+  padding: 6px 10px;
+  font: inherit;
+  color-scheme: dark;
+  color: #eef2ff;
+  background: #171e35;
+  border: 1px solid #56628a;
+  border-radius: 8px;
+}
+
+#accident-chart {
+  padding-left: 0;
+  list-style: none;
+}
+
+#accident-chart li {
+  margin-bottom: 8px;
+}
+
+#accident-chart meter {
+  width: min(100%, 280px);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+th,
+td {
+  padding: 10px clamp(4px, 1.5vw, 14px);
+  text-align: right;
+  border-bottom: 1px solid #343f63;
+}
+
+th {
+  background: #171e35;
+}
+
+th:first-child,
+td:first-child {
+  text-align: left;
+}
