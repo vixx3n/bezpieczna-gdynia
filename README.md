@@ -46,3 +46,9 @@ po przygotowaniu pierwszej działającej wersji.
 | 0.1 | 2026-11-19 | Pierwszy opis projektu i źródła danych. |
 | 0.2 | 2026-11-19 | Dodano instrukcję pobierania danych przez API. |
 | 0.3 | 2026-11-20 | Dodano instrukcję uruchomienia demo jedną komendą. |
+| 0.4 | 2026-11-20 | Dodano odnośniki do raportu i Lessons Learned. |
+
+## Dokumentacja
+
+- [Raport końcowy i pomiary wydajności](docs/raport-koncowy.md)
+- [Lessons Learned](docs/lessons-learned.md)
