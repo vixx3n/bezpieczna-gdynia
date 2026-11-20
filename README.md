@@ -16,12 +16,16 @@ liczby na wykresie oraz w tabeli.
 
 ## Uruchomienie
 
-Do pobrania danych potrzebujesz Pythona 3. Otwórz CMD w głównym folderze
-projektu i wykonaj polecenie:
+Potrzebujesz Pythona 3. Otwórz CMD w głównym folderze projektu i wpisz:
 
 ```cmd
-python scripts\download_data.py
+scripts\run_demo.cmd
 ```
+
+Otwórz [demo lokalne](http://127.0.0.1:8000/) w przeglądarce.
+Skrypt pobierze CSV przez API dane.gov.pl, jeśli nie ma go na dysku,
+przygotuje dane dla strony i uruchomi lokalny serwer. Nie wymaga dodatkowych
+bibliotek. Żeby zatrzymać serwer, naciśnij Ctrl + C w CMD.
 
 Skrypt pobierze dane przez API dane.gov.pl i zapisze je w pliku
 `data/raw/city_7_4_data.csv`. Nie wymaga instalowania dodatkowych bibliotek.
@@ -34,10 +38,11 @@ po przygotowaniu pierwszej działającej wersji.
 | Identyfikator | Wersja | Autor | Data |
 |---|---|---|---|
 | BG-README-001 | 0.1 | Vixen | 2026-11-19 |
-| 0.2 | 2026-11-19 | Dodano instrukcję pobierania danych przez API. |
 
 ## Historia zmian
 
 | Wersja | Data | Zmiana |
 |---|---|---|
 | 0.1 | 2026-11-19 | Pierwszy opis projektu i źródła danych. |
+| 0.2 | 2026-11-19 | Dodano instrukcję pobierania danych przez API. |
+| 0.3 | 2026-11-20 | Dodano instrukcję uruchomienia demo jedną komendą. |
