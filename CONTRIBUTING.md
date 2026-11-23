@@ -1,35 +1,152 @@
-# Jak pomóc w rozwoju projektu
+#  Contributing to Bezpieczna Gdynia
 
-## Zgłaszanie błędów
+Dziękuję za zainteresowanie projektem **Bezpieczna Gdynia**!
 
-Otwórz zgłoszenie w zakładce Issues. Napisz, co zrobiłeś, jakiego wyniku
-oczekiwałeś i co faktycznie się stało. Podaj wybrany rok, jeśli błąd
-dotyczy statystyk, oraz wersję przeglądarki lub Pythona, jeśli ma znaczenie.
+Projekt jest inicjatywą open source, której celem jest udostępnianie i wizualizacja danych dotyczących bezpieczeństwa drogowego w Gdyni.
 
-## Proponowanie zmian
+Każda propozycja poprawy kodu, dokumentacji lub funkcjonalności jest mile widziana.
 
-1. Zrób własną kopię repozytorium na GitHubie (fork) i utwórz gałąź na zmiany.
-2. Wprowadź zmianę i uruchom poniższe polecenia w głównym folderze projektu.
-3. Otwórz pull request, czyli zgłoszenie zmian. Opisz, co zmieniłeś i jak
-   sprawdziłeś wynik.
+##  Jak możesz pomóc?
 
-```cmd
+Możesz wesprzeć rozwój projektu poprzez:
+
+- Zgłaszanie błędów i problemów technicznych.
+- Proponowanie nowych funkcjonalności.
+- Poprawianie wyglądu i responsywności interfejsu.
+- Optymalizację kodu JavaScript i Python.
+- Rozbudowę testów automatycznych.
+- Ulepszanie dokumentacji.
+- Weryfikację poprawności przetwarzania danych publicznych.
+
+##  Zgłaszanie błędów
+
+Jeżeli zauważysz błąd, utwórz nowe zgłoszenie w zakładce [Issues](https://github.com/vixx3n/bezpieczna-gdynia/issues).
+
+Zgłoszenie powinno zawierać:
+
+1. Krótki opis problemu.
+2. Kroki pozwalające go odtworzyć.
+3. Oczekiwane zachowanie aplikacji.
+4. Rzeczywiste zachowanie aplikacji.
+5. Informację o systemie operacyjnym i przeglądarce.
+6. Zrzut ekranu lub komunikat błędu, jeśli jest dostępny.
+
+Przed utworzeniem zgłoszenia sprawdź, czy podobny problem nie został już opisany.
+
+## 💡 Proponowanie nowych funkcji
+
+Pomysły na rozwój projektu można zgłaszać poprzez GitHub Issues.
+
+Przykładowe propozycje:
+
+- Nowe rodzaje wykresów.
+- Porównywanie statystyk z różnych lat.
+- Eksport danych do CSV.
+- Rozbudowa obsługi urządzeń mobilnych.
+- Uruchamianie aplikacji za pomocą Dockera.
+- Publikacja demonstracji online.
+
+Przed rozpoczęciem większych zmian warto omówić propozycję w zgłoszeniu.
+
+## 🔧 Przygotowanie środowiska
+
+### 1. Utwórz Fork
+
+Utwórz własną kopię repozytorium za pomocą przycisku **Fork** na GitHubie.
+
+### 2. Sklonuj repozytorium
+
+```bash
+git clone https://github.com/TWOJ_LOGIN/bezpieczna-gdynia.git
+cd bezpieczna-gdynia
+```
+
+Zastąp `TWOJ_LOGIN` nazwą swojego konta.
+
+### 3. Utwórz nową gałąź
+
+```bash
+git checkout -b feature/nazwa-zmiany
+```
+
+Przykładowo:
+
+```bash
+git checkout -b feature/nowy-wykres
+```
+
+### 4. Wprowadź zmiany
+
+Projekt wykorzystuje HTML, CSS, JavaScript i Python.
+
+Zachowuj istniejącą strukturę katalogów oraz dbaj o czytelność kodu.
+
+### 5. Uruchom testy
+
+Przed przesłaniem zmian wykonaj:
+
+```bash
 python -m unittest discover -s tests -v
+```
+
+Sprawdź również jakość kodu:
+
+```bash
 python -m pip install ruff==0.17.5
 python -m ruff check scripts tests
 ```
 
-Nie dodawaj do repozytorium pobranego CSV ani wygenerowanego JSON-a.
-Małe próbki używane w testach trzymaj w `data/sample/`.
+### 6. Zapisz zmiany
 
-## Informacje o dokumencie
+```bash
+git add .
+git commit -m "Dodaj nową funkcjonalność"
+git push -u origin feature/nazwa-zmiany
+```
 
-| Identyfikator | Wersja | Autor | Data |
-|---|---|---|---|
-| BG-CONTRIB-001 | 0.1 | Vixen | 2026-11-20 |
+### 7. Utwórz Pull Request
 
-## Historia zmian
+Przejdź na GitHub i utwórz Pull Request do gałęzi `main`.
 
-| Wersja | Data | Zmiana |
-|---|---|---|
-| 0.1 | 2026-11-20 | Dodano zasady zgłaszania błędów i proponowania zmian. |
+W opisie podaj:
+
+- Co zostało zmienione.
+- Dlaczego zmiana jest potrzebna.
+- Jak przetestowano rozwiązanie.
+- Czy zmiana wymaga aktualizacji dokumentacji.
+
+##  Standardy jakości kodu
+
+Przy wprowadzaniu zmian przestrzegaj następujących zasad:
+
+- Stosuj czytelne nazwy zmiennych i funkcji.
+- Unikaj niepotrzebnego powielania kodu.
+- Zachowuj istniejące konwencje formatowania.
+- Nie dodawaj haseł, tokenów API ani innych sekretów.
+- Dodawaj testy do zmian w logice przetwarzania danych.
+- Aktualizuj dokumentację przy zmianach funkcjonalności.
+- Korzystaj z wiarygodnych źródeł danych.
+
+##  Bezpieczeństwo i prywatność
+
+Projekt wykorzystuje publiczne dane statystyczne.
+
+Nie należy umieszczać w repozytorium danych osobowych, poufnych informacji ani danych umożliwiających identyfikację uczestników wypadków.
+
+W przypadku wykrycia potencjalnej podatności bezpieczeństwa nie publikuj szczegółów umożliwiających jej wykorzystanie. Skontaktuj się z opiekunem repozytorium.
+
+##  Zasady społeczności
+
+Wszyscy uczestnicy projektu powinni przestrzegać zasad określonych w pliku [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+
+##  Licencja
+
+Przesyłając zmiany do projektu, akceptujesz ich udostępnienie na warunkach licencji MIT obowiązującej w repozytorium.
+
+##  Opiekun projektu
+
+**Jakub Woźniak**
+
+Repozytorium: [vixx3n/bezpieczna-gdynia](https://github.com/vixx3n/bezpieczna-gdynia)
+
+Dziękuję za każdą propozycję ulepszenia projektu!
