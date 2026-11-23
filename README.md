@@ -1,54 +1,212 @@
-# Bezpieczna Gdynia
+ Bezpieczna Gdynia
 
-Bezpieczna Gdynia to projekt otwartej aplikacji, która pomoże mieszkańcom
-sprawdzić, jak zmieniała się liczba wypadków drogowych z ofiarami w Gdyni.
-Zamiast przeglądać surowy plik CSV, będzie można wybrać rok i zobaczyć
-liczby na wykresie oraz w tabeli.
+Interaktywny dashboard statystyk wypadków drogowych w Gdyni
 
-## Źródło danych
+Bezpieczna Gdynia to projekt open source, którego celem jest przedstawienie publicznych danych o wypadkach drogowych w przejrzystej i interaktywnej formie.
 
-- [Liczba wypadków drogowych z ofiarami na dane.gov.pl](https://dane.gov.pl/pl/dataset/2336/resource/32633,liczba-wypadkow-drogowych-z-ofiarami-csv)
-- Dostawca danych — Gdynia – Otwarte Dane
-- Sprawdzony plik zawiera 45 kwartalnych rekordów od I kwartału 2015 do
-  I kwartału 2026. Rok 2026 jest w tym pliku niepełny.
-- Dane obejmują liczbę wypadków, rannych, zabitych i wszystkich poszkodowanych.
+Aplikacja umożliwia analizowanie liczby wypadków, osób rannych i ofiar śmiertelnych w poszczególnych latach i kwartałach.
 
+ Funkcjonalności
 
-## Uruchomienie
+Wyświetlanie liczby wypadków drogowych.
 
-Potrzebujesz Pythona 3. Otwórz CMD w głównym folderze projektu i wpisz:
+Prezentowanie liczby rannych i ofiar śmiertelnych.
 
-```cmd
+Filtrowanie statystyk według roku.
+
+Wizualizacja danych kwartalnych na wykresie.
+
+Szczegółowa tabela wyników.
+
+Informowanie o niepełnych danych dla wybranego roku.
+
+Automatyczne pobieranie i przygotowywanie danych.
+
+Uruchamianie lokalnego demo jedną komendą.
+
+ Źródło danych
+
+Dane pochodzą z publicznego portalu dane.gov.pl, ze zbioru dotyczącego liczby wypadków drogowych z ofiarami w Gdyni.
+
+Wykorzystywane informacje obejmują:
+
+Okres sprawozdawczy (rok i kwartał).
+
+Liczbę wypadków.
+
+Liczbę osób rannych.
+
+Liczbę osób zabitych.
+
+Łączną liczbę poszkodowanych.
+
+Dane są pobierane w formacie CSV i przekształcane do JSON.
+
+Ważne: statystyki dotyczą zarejestrowanych zdarzeń w określonych okresach. Aplikacja nie prognozuje przyszłych wypadków.
+
+ Wykorzystane technologie
+
+Technologia
+
+Zastosowanie
+
+HTML5
+
+Struktura strony
+
+CSS3
+
+Wygląd i układ interfejsu
+
+JavaScript
+
+Obsługa danych, filtrowania i wykresu
+
+Python
+
+Pobieranie i przetwarzanie danych
+
+Git i GitHub
+
+Kontrola wersji
+
+GitHub Actions
+
+Automatyczne testowanie
+
+Ruff
+
+Kontrola jakości kodu
+
+unittest
+
+Testy automatyczne
+
+🚀 Uruchomienie aplikacji
+
+Wymagania
+
+Windows
+
+Python 3
+
+Połączenie z internetem podczas pierwszego pobierania danych
+
+Krok 1. Pobierz repozytorium
+
+git clone https://github.com/vixx3n/bezpieczna-gdynia.git
+cd bezpieczna-gdynia
+
+Krok 2. Uruchom demo
+
+W wierszu polecenia Windows (CMD) wykonaj:
+
 scripts\run_demo.cmd
-```
 
-Otwórz [demo lokalne](http://127.0.0.1:8000/) w przeglądarce.
-Skrypt pobierze CSV przez API dane.gov.pl, jeśli nie ma go na dysku,
-przygotuje dane dla strony i uruchomi lokalny serwer. Nie wymaga dodatkowych
-bibliotek. Żeby zatrzymać serwer, naciśnij Ctrl + C w CMD.
+Skrypt przygotuje potrzebne dane i uruchomi lokalny serwer HTTP.
 
-Skrypt pobierze dane przez API dane.gov.pl i zapisze je w pliku
-`data/raw/city_7_4_data.csv`. Nie wymaga instalowania dodatkowych bibliotek.
+Krok 3. Otwórz aplikację
 
-Strona jest jeszcze w budowie. Instrukcja jej uruchomienia pojawi się
-po przygotowaniu pierwszej działającej wersji.
+W przeglądarce przejdź pod adres:
 
-## Informacje o dokumencie
+http://127.0.0.1:8000/
 
-| Identyfikator | Wersja | Autor | Data |
-|---|---|---|---|
-| BG-README-001 | 0.1 | Vixen | 2026-11-19 |
+Aby zatrzymać serwer, naciśnij Ctrl+C w terminalu.
 
-## Historia zmian
+Demo działa lokalnie. Projekt nie wymaga publikowania aplikacji na zewnętrznym serwerze.
 
-| Wersja | Data | Zmiana |
-|---|---|---|
-| 0.1 | 2026-11-19 | Pierwszy opis projektu i źródła danych. |
-| 0.2 | 2026-11-19 | Dodano instrukcję pobierania danych przez API. |
-| 0.3 | 2026-11-20 | Dodano instrukcję uruchomienia demo jedną komendą. |
-| 0.4 | 2026-11-20 | Dodano odnośniki do raportu i Lessons Learned. |
+📈 Przykładowa analiza
 
-## Dokumentacja
+Według danych wykorzystanych w projekcie w 2025 roku odnotowano:
 
-- [Raport końcowy i pomiary wydajności](docs/raport-koncowy.md)
-- [Lessons Learned](docs/lessons-learned.md)
+Kwartał
+
+Liczba wypadków
+
+Q1 (styczeń–marzec)
+
+14
+
+Q2 (kwiecień–czerwiec)
+
+27
+
+Q3 (lipiec–wrzesień)
+
+36
+
+Q4 (październik–grudzień)
+
+19
+
+Razem
+
+96
+
+Najwięcej wypadków w 2025 roku odnotowano w trzecim kwartale.
+
+🧪 Testowanie
+
+Projekt zawiera automatyczne testy sprawdzające przetwarzanie danych.
+
+Uruchomienie testów:
+
+python -m unittest discover -s tests -v
+
+Kontrola jakości kodu:
+
+python -m pip install ruff==0.17.5
+python -m ruff check scripts tests
+
+Repozytorium zawiera również workflow GitHub Actions uruchamiający testy i kontrolę jakości kodu przy zmianach w repozytorium.
+
+📂 Struktura projektu
+
+Bezpieczna-Gdynia/
+├── .github/                # Automatyzacja i szablony GitHub
+├── data/
+│   └── sample/             # Przykładowe dane
+├── docs/                   # Dokumentacja i raporty
+├── scripts/
+│   ├── prepare_data.py     # Przetwarzanie CSV do JSON
+│   └── run_demo.cmd        # Uruchomienie demo
+├── src/
+│   ├── index.html          # Strona aplikacji
+│   ├── style.css           # Style
+│   └── app.js              # Logika dashboardu
+├── tests/                  # Testy automatyczne
+├── README.md
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
+└── LICENSE
+
+📚 Dokumentacja
+
+Dodatkowe materiały znajdują się w katalogu docs/:
+
+raport-koncowy.md zawiera podsumowanie realizacji projektu, wyniki testów i pomiary wydajności.
+
+lessons-learned.md opisuje zdobyte doświadczenia i wnioski.
+
+Historia zmian jest dostępna w pliku CHANGELOG.md.
+
+🤝 Współpraca
+
+Projekt jest publiczny i otwarty na propozycje zmian.
+
+Można zgłaszać błędy, proponować ulepszenia oraz przesyłać Pull Requesty.
+
+Szczegółowe zasady opisano w pliku CONTRIBUTING.md.
+
+📄 Licencja
+
+Projekt jest udostępniany na licencji MIT. Szczegóły znajdują się w pliku LICENSE.
+
+👨‍💻 Autor
+
+Jakub Woźniak
+
+Projekt edukacyjny z zakresu tworzenia oprogramowania open source, przetwarzania danych publicznych i tworzenia aplikacji internetowych.
+
+GitHub: vixx3n/bezpieczna-gdynia
